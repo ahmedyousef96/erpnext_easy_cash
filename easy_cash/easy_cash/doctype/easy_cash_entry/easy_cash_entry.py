@@ -14,8 +14,6 @@ class EasyCashEntry(AccountsController):
 	def set_missing_values(self):
 		if not self.company:
 			self.company = frappe.defaults.get_user_default("Company")
-		if not self.posting_date:
-			self.posting_date = frappe.utils.today()
 		if not self.conversion_rate:
 			self.conversion_rate = 1.0
 		self.calculate_total()

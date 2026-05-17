@@ -52,10 +52,10 @@
    "options": "Company",
    "reqd": 1
   },
-  {
-   "default": "Today",
-   "fieldname": "posting_date",
-   "fieldtype": "Date",
+   {
+    "default": "Now",
+    "fieldname": "posting_date",
+   "fieldtype": "Datetime",
    "in_list_view": 1,
    "label": "Posting Date",
    "reqd": 1
@@ -107,9 +107,9 @@
    "options": "currency",
    "read_only": 1
   },
-   {
-    "fetch_from": "treasury.currency",
-    "fieldname": "currency",
+  {
+   "fetch_from": "treasury.currency",
+   "fieldname": "currency",
    "fieldtype": "Link",
    "label": "Currency",
    "options": "Currency",
@@ -149,7 +149,7 @@
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2026-05-17 22:42:03.684629",
+ "modified": "2026-05-18 01:48:46.132383",
  "modified_by": "Administrator",
  "module": "Easy Cash",
  "name": "Easy Cash Entry",
