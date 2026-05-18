@@ -13,9 +13,11 @@ class EasyCashCategory(Document):
 	def validate_field_changes(self):
 		if self.is_new():
 			return
-		old_type = frappe.db.get_value("Easy Cash Category", self.name, "type")
-		old_account = frappe.db.get_value("Easy Cash Category", self.name, "account")
-		if old_type != self.type or old_account != self.account:
+
+		before = self.get_doc_before_save()
+		if not before:
+			return
+		if before.type != self.type or before.account != self.account:
 			active_entries = frappe.db.sql(
 				"""
 				SELECT ece.name

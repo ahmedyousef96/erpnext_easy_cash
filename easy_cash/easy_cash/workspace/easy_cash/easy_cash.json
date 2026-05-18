@@ -1,0 +1,114 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"cSdM9x9Im2\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Easy Cash</span>\",\"col\":12}},{\"id\":\"-vtG-TnXhF\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Cash Entry\",\"col\":4}},{\"id\":\"3L-9dX3oES\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Easy Cash Entry Register\",\"col\":4}},{\"id\":\"mieOyKHcWO\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"lKe9HuQFeD\",\"type\":\"card\",\"data\":{\"card_name\":\"Master\",\"col\":4}},{\"id\":\"ZYec-8kEF-\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}},{\"id\":\"LQuSDrUq3u\",\"type\":\"card\",\"data\":{\"card_name\":\"Settings\",\"col\":4}}]",
+ "creation": "2026-05-18 18:52:03.755212",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "money-coins-1",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Easy Cash",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Master",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Easy Cash Entry",
+   "link_count": 0,
+   "link_to": "Easy Cash Entry",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Settings",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Easy Cash Category",
+   "link_count": 0,
+   "link_to": "Easy Cash Category",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Treasury",
+   "link_count": 0,
+   "link_to": "Treasury",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Reports",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Easy Cash Entry Register",
+   "link_count": 0,
+   "link_to": "Easy Cash Entry Register",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-05-18 19:25:11.154567",
+ "modified_by": "Administrator",
+ "module": "Easy Cash",
+ "name": "Easy Cash",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 31.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "New",
+   "label": "New Cash Entry",
+   "link_to": "Easy Cash Entry",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Easy Cash Entry Register",
+   "link_to": "Easy Cash Entry Register",
+   "report_ref_doctype": "Easy Cash Entry",
+   "type": "Report"
+  }
+ ],
+ "title": "Easy Cash"
+}

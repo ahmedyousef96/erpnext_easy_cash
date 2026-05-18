@@ -94,9 +94,17 @@ class EasyCashEntry(AccountsController):
 			company_currency = frappe.db.get_value("Company", self.company, "default_currency")
 			if company_currency and self.currency != company_currency:
 				frappe.throw(
-					_("Entry currency ({0}) must match company currency ({1})").format(
-						self.currency, company_currency
-					),
+					_(
+						"Multi-currency entries are not supported yet.<br>"
+						"Entry currency ({0}) must match company currency ({1}).<br><hr>"
+						"<b>Contact for multi-currency support:</b><br>"
+						'<span class="fa fa-whatsapp" style="color:#25D366"></span> '
+						'<a href="https://api.whatsapp.com/send/?phone=201028171836&text=Hello%2C+I%27m+contacting+you+for+App+Easy+Cash+Support&type=phone_number&app_absent=0" target="_blank">'
+						"WhatsApp/Call: +201028171836</a><br>"
+						'<span class="fa fa-envelope" style="color:#ea4335"></span> '
+						'<a href="mailto:Ay716881@gmail.com?subject=Easy Cash App - Multi-currency Support">'
+						"Email: Ay716881@gmail.com</a>"
+					).format(self.currency, company_currency),
 					title=_("Currency Not Supported"),
 				)
 

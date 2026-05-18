@@ -76,6 +76,14 @@ frappe.ui.form.on("Easy Cash Entry", {
 
     refresh: function (frm) {
         frm.trigger("set_category_filters");
+        if (frm.doc.docstatus === 1 && !frm.doc.__islocal) {
+            frm.add_custom_button(__("View General Ledger"), function () {
+                frappe.set_route("query-report", "General Ledger", {
+                    voucher_no: frm.doc.name,
+                    company: frm.doc.company,
+                });
+            });
+        }
     },
 });
 

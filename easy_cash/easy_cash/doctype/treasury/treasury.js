@@ -13,5 +13,13 @@ frappe.ui.form.on("Treasury", {
 
     refresh: function (frm) {
         frm.trigger("company");
+        if (!frm.is_new() && frm.doc.account) {
+            frm.add_custom_button(__("View General Ledger"), function () {
+                frappe.set_route("query-report", "General Ledger", {
+                    account: frm.doc.account,
+                    company: frm.doc.company,
+                });
+            });
+        }
     },
 });
