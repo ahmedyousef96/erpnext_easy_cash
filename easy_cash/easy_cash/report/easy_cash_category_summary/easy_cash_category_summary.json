@@ -1,0 +1,32 @@
+{
+ "add_total_row": 1,
+ "columns": [],
+ "creation": "2026-05-18 00:00:00",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "modified": "2026-05-18 00:00:00",
+ "modified_by": "Administrator",
+ "module": "Easy Cash",
+ "name": "Easy Cash Category Summary",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Easy Cash Entry",
+ "report_name": "Easy Cash Category Summary",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "Accounts User"
+  },
+  {
+   "role": "Accounts Manager"
+  },
+  {
+   "role": "System Manager"
+  }
+ ],
+ "timeout": 0
+}

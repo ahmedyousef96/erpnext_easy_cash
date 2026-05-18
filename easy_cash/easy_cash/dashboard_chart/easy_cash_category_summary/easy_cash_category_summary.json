@@ -1,0 +1,21 @@
+{
+ "chart_name": "Easy Cash Category Summary",
+ "chart_type": "Report",
+ "creation": "2026-05-18 00:00:00",
+ "doctype": "Dashboard Chart",
+ "dynamic_filters_json": "{\"company\":\"frappe.defaults.get_user_default(\\\"Company\\\")\"}",
+ "filters_json": "{}",
+ "idx": 0,
+ "is_public": 1,
+ "is_standard": 1,
+ "modified": "2026-05-18 00:00:00",
+ "modified_by": "Administrator",
+ "module": "Easy Cash",
+ "name": "Easy Cash Category Summary",
+ "owner": "Administrator",
+ "report_name": "Easy Cash Category Summary",
+ "timeseries": 0,
+ "type": "Bar",
+ "use_report_chart": 1,
+ "y_axis": []
+}
