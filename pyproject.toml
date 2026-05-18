@@ -48,6 +48,8 @@ ignore = [
     "F405", # can't detect undefined names from * import
     "F722", # syntax error in forward type annotation
     "W191", # indentation contains tabs
+    "RUF015", # prefer next() over single element slice
+    "UP032", # use f-string instead of format
 ]
 typing-modules = ["frappe.types.DF"]
 

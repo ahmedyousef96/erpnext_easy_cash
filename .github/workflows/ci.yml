@@ -76,5 +76,6 @@ jobs:
 
       - name: Run Python linters
         run: |
-          pip install black flake8
-          black --check .
+          pip install ruff
+          ruff check .
+          ruff format --check .
