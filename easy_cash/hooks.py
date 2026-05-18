@@ -1,29 +1,24 @@
 app_name = "easy_cash"
 app_title = "Easy Cash"
-app_publisher = "Revamp"
+app_publisher = "Ahmed Yousef"
 app_description = "Simplified cash in/out for non-accounting staff"
-app_email = "info@revampconsulting.com"
+app_email = "Ay716881@gmail.com"
 app_license = "mit"
+
+source_link = "https://github.com/ahmedyousef96/erpnext_easy_cash"
 
 required_apps = ["erpnext"]
 
 accounting_dimension_doctypes = ["Easy Cash Entry Detail"]
 
-# Apps
-# ------------------
-
-# required_apps = []
-
-# Each item in the list will be shown as an app in the apps page
-# add_to_apps_screen = [
-# 	{
-# 		"name": "easy_cash",
-# 		"logo": "/assets/easy_cash/logo.png",
-# 		"title": "Easy Cash",
-# 		"route": "/easy_cash",
-# 		"has_permission": "easy_cash.api.permission.has_app_permission"
-# 	}
-# ]
+add_to_apps_screen = [
+	{
+		"name": "easy_cash",
+		"logo": "/assets/easy_cash/logo.png",
+		"title": "Easy Cash",
+		"route": "/easy_cash",
+	}
+]
 
 # Includes in <head>
 # ------------------

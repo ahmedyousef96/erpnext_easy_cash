@@ -1,9 +1,10 @@
 [project]
 name = "easy_cash"
 authors = [
-    { name = "Revamp", email = "info@revampconsulting.com"}
+    { name = "Ahmed Yousef", email = "Ay716881@gmail.com"}
 ]
 description = "Simplified cash in/out for non-accounting staff"
+license = "MIT"
 requires-python = ">=3.10"
 readme = "README.md"
 dynamic = ["version"]
