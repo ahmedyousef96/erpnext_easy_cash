@@ -9,9 +9,9 @@
  "hide_custom": 0,
  "icon": "money-coins-1",
  "idx": 0,
- "indicator_color": "green",
+ "indicator_color": "",
  "is_hidden": 0,
- "label": "Easy Cash",
+ "label": "Cash",
  "links": [
   {
    "hidden": 0,
@@ -91,10 +91,10 @@
    "type": "Link"
   }
  ],
- "modified": "2026-05-18 20:06:51.041463",
+ "modified": "2026-05-19 19:34:47.701468",
  "modified_by": "Administrator",
  "module": "Easy Cash",
- "name": "Easy Cash",
+ "name": "Cash",
  "number_cards": [],
  "owner": "Administrator",
  "parent_page": "",
@@ -128,5 +128,5 @@
    "type": "Report"
   }
  ],
- "title": "Easy Cash"
+ "title": "Cash"
 }

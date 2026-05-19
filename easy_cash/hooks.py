@@ -16,7 +16,7 @@ add_to_apps_screen = [
 		"name": "easy_cash",
 		"logo": "/assets/easy_cash/logo.png",
 		"title": "Easy Cash",
-		"route": "/app/easy-cash",
+		"route": "/app/cash",
 		"has_permission": "easy_cash.api.permission.has_app_permission",
 	}
 ]
