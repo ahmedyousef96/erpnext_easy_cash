@@ -96,10 +96,12 @@ def get_data(filters):
 		FROM `tabEasy Cash Entry Detail` eced
 		JOIN `tabEasy Cash Entry` ece ON ece.name = eced.parent
 		JOIN `tabEasy Cash Category` ecc ON ecc.name = eced.category
-		WHERE {conditions}
+		WHERE """
+		+ conditions
+		+ """
 		GROUP BY eced.category
 		ORDER BY total_amount DESC
-	""".format(conditions=conditions),
+	""",
 		filter_values,
 		as_dict=1,
 	)

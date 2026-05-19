@@ -202,9 +202,11 @@ def get_parent_entries(filters):
 		SELECT name, posting_date, entry_type, treasury, reference_no,
 			total_amount, remarks, currency
 		FROM `tabEasy Cash Entry`
-		WHERE {conditions}
+		WHERE """
+		+ conditions
+		+ """
 		ORDER BY posting_date DESC, name DESC
-	""".format(conditions=conditions),
+	""",
 		filter_values,
 		as_dict=1,
 	)
@@ -225,9 +227,11 @@ def get_child_entries(parent_names, filters):
 		"""
 		SELECT name, parent as parent_entry, category, description, amount
 		FROM `tabEasy Cash Entry Detail`
-		WHERE {conditions}
+		WHERE """
+		+ conditions
+		+ """
 		ORDER BY idx
-	""".format(conditions=conditions),
+	""",
 		filter_values,
 		as_dict=1,
 	)

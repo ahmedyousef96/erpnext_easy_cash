@@ -30,7 +30,7 @@ def create_demo_data(company=None):
 	categories = _create_categories(company, expense_account, income_account)
 	entries = _create_entries(company, treasury, categories, cost_center)
 
-	frappe.db.commit()
+	frappe.db.commit()  # nosemgrep: commit required to persist submitted docs in bench console script
 
 	return {
 		"treasury": treasury,
@@ -215,10 +215,8 @@ def _create_entries(company, treasury, categories, cost_center):
 
 	created = []
 	for entry_data in entries_data:
-		if not entry_data["category"] in categories:
+		if entry_data["category"] not in categories:
 			continue
-
-		category_type = frappe.db.get_value("Easy Cash Category", entry_data["category"], "type")
 
 		doc = frappe.get_doc(
 			{
