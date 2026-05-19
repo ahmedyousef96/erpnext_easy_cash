@@ -5,7 +5,15 @@ from frappe.utils import getdate, now
 
 def create_demo_data(company=None):
 	if not company:
-		company = frappe.db.get_value("Company", {}, "name")
+		companies = frappe.get_all(
+			"Company",
+			filters={"name": ["not like", "_Test%"]},
+			pluck="name",
+			order_by="creation asc",
+		)
+		if not companies:
+			companies = frappe.get_all("Company", pluck="name", order_by="creation asc")
+		company = companies[0] if companies else None
 
 	if not company:
 		frappe.throw(_("No company found"))
