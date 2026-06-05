@@ -2,9 +2,13 @@ import frappe
 from frappe import _
 from frappe.model.document import Document
 
+from easy_cash.api.plan import validate_treasury_limit
+
 
 class Treasury(Document):
 	def validate(self):
+		if self.is_new():
+			validate_treasury_limit(self.company)
 		self.validate_account()
 		self.validate_account_company()
 		self.validate_account_change()

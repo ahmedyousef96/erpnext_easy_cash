@@ -9,6 +9,7 @@ frappe.ui.form.on("Treasury", {
                 },
             };
         });
+        frm.trigger("show_plan_info");
     },
 
     refresh: function (frm) {
@@ -21,5 +22,47 @@ frappe.ui.form.on("Treasury", {
                 });
             });
         }
+        frm.trigger("show_plan_info");
+    },
+
+    show_plan_info: function (frm) {
+        if (!frm.doc.company) return;
+        frappe.call({
+            method: "easy_cash.api.plan.get_plan_info",
+            args: { company: frm.doc.company },
+            callback: function (r) {
+                if (!r.message) return;
+                var info = r.message;
+                $(frm.wrapper).find(".ec-plan-info").remove();
+                var color =
+                    info.plan === "Self-Hosted"
+                        ? "var(--text-muted)"
+                        : info.plan === "Free"
+                          ? "var(--orange)"
+                          : "var(--primary)";
+                var html =
+                    '<div class="ec-plan-info" style="' +
+                    "background: var(--bg-color);" +
+                    "border: 1px solid var(--border-color);" +
+                    "border-radius: var(--border-radius);" +
+                    "padding: 8px 12px;" +
+                    "margin-bottom: 15px;" +
+                    "font-size: 12px;" +
+                    "color: " +
+                    color +
+                    ";" +
+                    '">' +
+                    "<strong>Easy Cash Plan:</strong> " +
+                    __(info.plan) +
+                    " &nbsp;|&nbsp; " +
+                    __("Treasuries") +
+                    ": " +
+                    info.current_treasuries +
+                    "/" +
+                    info.max_treasuries +
+                    "</div>";
+                $(frm.wrapper).find(".form-layout").prepend(html);
+            },
+        });
     },
 });
