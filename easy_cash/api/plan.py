@@ -19,6 +19,21 @@ def get_secret_key():
 	return frappe.conf.get("sk_easy_cash")
 
 
+def log_diagnostics():
+	from frappe.utils.frappecloud import on_frappecloud
+
+	sk_keys = [k for k in frappe.conf if str(k).startswith("sk_")]
+	frappe.log_error(
+		"Easy Cash Diagnostics: sk_easy_cash={}, on_frappecloud={}, all sk_ keys={}, site={}".format(
+			bool(get_secret_key()),
+			on_frappecloud(),
+			sk_keys,
+			frappe.local.site,
+		),
+		"Easy Cash Plan Check",
+	)
+
+
 def get_subscription_plan():
 	from frappe.utils.frappecloud import on_frappecloud
 
@@ -47,6 +62,7 @@ def get_subscription_plan():
 			)
 
 	if on_frappecloud():
+		log_diagnostics()
 		return "Free"
 
 	return None
