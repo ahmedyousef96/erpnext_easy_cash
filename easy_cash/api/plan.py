@@ -50,7 +50,7 @@ def get_treasury_limit(company):
 
 
 def get_treasury_count(company):
-	return frappe.db.count("Treasury", {"company": company})
+	return frappe.db.count("Treasury", {"company": company, "disabled": 0})
 
 
 def validate_treasury_limit(company):
