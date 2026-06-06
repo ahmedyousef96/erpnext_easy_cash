@@ -20,7 +20,7 @@ def get_secret_key():
 
 
 def get_subscription_plan():
-	from frappe.utils import on_frappecloud
+	from frappe.utils.frappecloud import on_frappecloud
 
 	secret_key = get_secret_key()
 
