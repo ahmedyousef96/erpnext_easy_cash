@@ -2,6 +2,8 @@ import frappe
 from frappe import _
 from frappe.integrations.utils import make_post_request
 
+USE_PLAN_LIMITS = False  # TODO: Enable after FC fixes sk_ key injection bug
+
 PLAN_LIMITS = {
 	"Free": 1,
 	"Standard": 5,
@@ -65,6 +67,8 @@ def get_treasury_count(company):
 
 
 def validate_treasury_limit(company):
+	if not USE_PLAN_LIMITS:
+		return
 	plan = get_subscription_plan()
 	if not plan:
 		return
@@ -88,6 +92,16 @@ def validate_treasury_limit(company):
 def get_plan_info(company):
 	if not frappe.has_permission("Company", ptype="read", doc=company):
 		frappe.throw(_("Not permitted"), frappe.PermissionError)
+
+	count = get_treasury_count(company)
+
+	if not USE_PLAN_LIMITS:
+		return {
+			"plan": "Self-Hosted",
+			"max_treasuries": "Unlimited",
+			"current_treasuries": count,
+			"remaining": "Unlimited",
+		}
 
 	plan = get_subscription_plan()
 	if not plan:
