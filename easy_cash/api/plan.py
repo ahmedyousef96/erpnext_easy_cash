@@ -97,10 +97,7 @@ def get_plan_info(company):
 
 	if not USE_PLAN_LIMITS:
 		return {
-			"plan": "Self-Hosted",
-			"max_treasuries": "Unlimited",
-			"current_treasuries": count,
-			"remaining": "Unlimited",
+			"plan_enabled": False,
 		}
 
 	plan = get_subscription_plan()
@@ -118,6 +115,7 @@ def get_plan_info(company):
 		remaining = str(max(0, int(limit) - count))
 
 	return {
+		"plan_enabled": True,
 		"plan": plan,
 		"max_treasuries": max_str,
 		"current_treasuries": count,

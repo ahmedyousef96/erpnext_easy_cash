@@ -31,9 +31,9 @@ frappe.ui.form.on("Treasury", {
             method: "easy_cash.api.plan.get_plan_info",
             args: { company: frm.doc.company },
             callback: function (r) {
-                if (!r.message) return;
-                var info = r.message;
                 $(frm.wrapper).find(".ec-plan-info").remove();
+                if (!r.message || !r.message.plan_enabled) return;
+                var info = r.message;
                 var color =
                     info.plan === "Self-Hosted"
                         ? "var(--text-muted)"
